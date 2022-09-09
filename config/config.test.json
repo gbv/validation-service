@@ -50,6 +50,14 @@
       "versions": {
         "skipped": {
         },
+        "ebnf": {
+          "schemas": [
+            {
+              "type": "w3c-ebnf",
+              "value": "Digits ::= [0-9]+"
+            }
+          ]
+        },
         "default": {
           "schemas": [
             {

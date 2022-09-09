@@ -50,11 +50,19 @@ export const validationExamples = {
       "?": [{ message: "Invalid regular expression: /?/: Nothing to repeat" }],
     },
   },
-  digits: { // example of a format defined by regexp
+  digits: { // defined by regexp
     valid: ["123\n456\n"],
     invalid: {
       xy: [{
         message: "Value does not match regular expression",
+      }],
+    },
+  },
+  "digits@ebnf": { // defined by W3C-EBNF
+    valid: ["123"],
+    invalid: {
+      x: [{
+        message: "Value does not match grammar",
       }],
     },
   },
@@ -159,6 +167,16 @@ export const validationExamples = {
       "@prefix 123": [{
         message: "Expected prefix to follow @prefix on line 1.",
         position: { rfc5147: "line=1", linecol: "1:8" },
+      }],
+    },
+  },
+  ["w3c-ebnf"]: {
+    valid: [
+      "Char ::= #x9 | #xA | #xD",
+    ],
+    invalid: {
+      "X = 1": [{
+        message: "Invalid EBNF",
       }],
     },
   },

@@ -27,6 +27,7 @@ describe("ValidationService", () => {
     expect(formats.map(f => f.id)).deep.equal([
       "json-schema",
       "regexp",
+      "w3c-ebnf",
       "xsd",
     ])
   })
@@ -43,11 +44,6 @@ describe("ValidationService", () => {
 
     result = service.getFormat("json-schema", { version: "default" })
     expect(Object.keys(result.versions)).to.deep.equal(["draft-07"])
-  })
-
-  it("should reduce format versions to those useable for validation", () => {
-    const digits = service.getFormat("digits")
-    expect(Object.keys(digits.versions)).to.deep.equal(["default"])
   })
 
   it("should use specific schema version, if requested", () => {

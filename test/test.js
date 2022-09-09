@@ -25,6 +25,7 @@ const formatIds = [
   "ntriples",
   "regexp",
   "turtle",
+  "w3c-ebnf",
   "xml",
   "xsd",
   "yaml",
