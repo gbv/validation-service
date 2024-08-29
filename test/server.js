@@ -413,7 +413,9 @@ describe("Server", () => {
 
     it(`should validate ${format} data ${niceData} ${select} (POST multipart)`, done => {
       const fields = { data }
-      if (select) fields.select = select
+      if (select) {
+        fields.select = select
+      }
       chai.request(app)
         .post(`/${format}`)
         .type("form")
